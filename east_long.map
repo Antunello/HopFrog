@@ -1,0 +1,396 @@
+0,0 giallo
+1,0 rosso
+2,0 giallo
+3,0 giallo
+4,0 giallo
+5,0 giallo
+6,0 giallo
+7,0 giallo
+8,0 blue
+9,0 blue
+10,0 blue
+11,0 giallo
+12,0 rosso
+13,0 rosso
+14,0 rosso
+15,0 rosso
+16,0 giallo
+17,0 rosso
+18,0 blue
+19,0 door
+20,0 fukata
+21,0 giallo
+0,1 giallo
+1,1 rosso
+2,1 giallo
+3,1 blue
+4,1 blue
+5,1 blue
+6,1 blue
+7,1 giallo
+8,1 nero
+9,1 nero
+10,1 nero
+11,1 giallo
+12,1 rosso
+13,1 rosso
+14,1 rosso
+15,1 rosso
+16,1 giallo
+17,1 rosso
+18,1 nero
+19,1 rosso
+20,1
+21,1
+0,2 giallo
+1,2 rosso
+2,2 giallo
+3,2 blue
+4,2 giallo
+5,2 blue
+6,2 blue
+7,2 giallo
+8,2 fukata
+9,2 nero
+10,2 fukata
+11,2 giallo
+12,2 giallo
+13,2 giallo
+14,2 giallo
+15,2 giallo
+16,2 giallo
+17,2 rosso
+18,2
+19,2
+20,2
+21,2
+0,3 giallo
+1,3 rosso
+2,3 giallo
+3,3 blue
+4,3 giallo
+5,3 blue
+6,3 blue
+7,3 giallo
+8,3 nero
+9,3 fukata
+10,3 fukata
+11,3 giallo
+12,3 rosso
+13,3 rosso
+14,3 rosso
+15,3 rosso
+16,3 giallo
+17,3 rosso
+18,3
+19,3
+20,3
+21,3
+0,4 giallo
+1,4 rosso
+2,4 giallo
+3,4 blue
+4,4 giallo
+5,4 giallo
+6,4 giallo
+7,4 giallo
+8,4 nero
+9,4 fukata
+10,4 nero
+11,4 giallo
+12,4 rosso
+13,4 rosso
+14,4 rosso
+15,4 rosso
+16,4 giallo
+17,4 rosso
+18,4
+19,4
+20,4
+21,4
+0,5 giallo
+1,5 rosso
+2,5 giallo
+3,5 blue
+4,5 blue
+5,5 giallo
+6,5 fukata
+7,5 nero
+8,5 giallo
+9,5 giallo
+10,5 giallo
+11,5 giallo
+12,5 giallo
+13,5 giallo
+14,5 giallo
+15,5 giallo
+16,5 giallo
+17,5 giallo
+18,5
+19,5
+20,5
+21,5
+0,6 giallo
+1,6 rosso
+2,6 giallo
+3,6 blue
+4,6 blue
+5,6 giallo
+6,6 fukata
+7,6 fukata
+8,6 giallo
+9,6 blue
+10,6 blue
+11,6 blue
+12,6 blue
+13,6 blue
+14,6 blue
+15,6 blue
+16,6 blue
+17,6 giallo
+18,6
+19,6
+20,6
+21,6
+0,7 giallo
+1,7 rosso
+2,7 giallo
+3,7 blue
+4,7 blue
+5,7 giallo
+6,7 nero
+7,7 fukata
+8,7 giallo
+9,7 blue
+10,7 giallo
+11,7 giallo
+12,7 giallo
+13,7 giallo
+14,7 giallo
+15,7 giallo
+16,7 blue
+17,7 giallo
+18,7
+19,7
+20,7
+21,7
+0,8 giallo
+1,8 rosso
+2,8 giallo
+3,8 blue
+4,8 blue
+5,8 giallo
+6,8 giallo
+7,8 fukata
+8,8 giallo
+9,8 blue
+10,8 fukata
+11,8 fukata
+12,8 nero
+13,8 nero
+14,8 nero
+15,8 giallo
+16,8 blue
+17,8 giallo
+18,8
+19,8
+20,8
+21,8
+0,9 giallo
+1,9 rosso
+2,9 giallo
+3,9 giallo
+4,9 giallo
+5,9 rosso
+6,9 giallo
+7,9 nero
+8,9 giallo
+9,9 giallo
+10,9 nero
+11,9 fukata
+12,9 fukata
+13,9 fukata
+14,9 fukata
+15,9 giallo
+16,9 blue
+17,9 giallo
+18,9
+19,9
+20,9
+21,9
+0,10 giallo
+1,10 rosso
+2,10 rosso
+3,10 rosso
+4,10 giallo
+5,10 rosso
+6,10 giallo
+7,10 nero
+8,10 giallo
+9,10 giallo
+10,10 giallo
+11,10 giallo
+12,10 giallo
+13,10 giallo
+14,10 giallo
+15,10 giallo
+16,10 blue
+17,10 giallo
+18,10
+19,10
+20,10
+21,10
+0,11 giallo
+1,11 giallo
+2,11 giallo
+3,11 rosso
+4,11 giallo
+5,11 rosso
+6,11 giallo
+7,11 giallo
+8,11 blue
+9,11 blue
+10,11 blue
+11,11 blue
+12,11 blue
+13,11 blue
+14,11 blue
+15,11 blue
+16,11 blue
+17,11 giallo
+18,11
+19,11
+20,11
+21,11
+0,12 rosso
+1,12 rosso
+2,12 giallo
+3,12 rosso
+4,12 giallo
+5,12 rosso
+6,12 rosso
+7,12 giallo
+8,12 giallo
+9,12 giallo
+10,12 blue
+11,12 giallo
+12,12 giallo
+13,12 giallo
+14,12 giallo
+15,12 giallo
+16,12 giallo
+17,12 giallo
+18,12
+19,12
+20,12
+21,12
+0,13 giallo
+1,13 giallo
+2,13 giallo
+3,13 rosso
+4,13 giallo
+5,13 giallo
+6,13 giallo
+7,13 rosso
+8,13 rosso
+9,13 giallo
+10,13 blue
+11,13 giallo
+12,13 rosso
+13,13 rosso
+14,13 rosso
+15,13 rosso
+16,13 rosso
+17,13 giallo
+18,13
+19,13
+20,13
+21,13
+0,14 giallo
+1,14 rosso
+2,14 rosso
+3,14 rosso
+4,14 rosso
+5,14 rosso
+6,14 giallo
+7,14 rosso
+8,14 giallo
+9,14 giallo
+10,14 blue
+11,14 giallo
+12,14 rosso
+13,14 rosso
+14,14 rosso
+15,14 rosso
+16,14 rosso
+17,14 door
+18,14
+19,14
+20,14
+21,14
+0,15 giallo
+1,15 rosso
+2,15 rosso
+3,15 rosso
+4,15 rosso
+5,15 rosso
+6,15 giallo
+7,15 rosso
+8,15 giallo
+9,15 giallo
+10,15 blue
+11,15 giallo
+12,15 giallo
+13,15 giallo
+14,15 giallo
+15,15 giallo
+16,15 giallo
+17,15 rosso
+18,15
+19,15
+20,15
+21,15
+0,16 giallo
+1,16 giallo
+2,16 giallo
+3,16 giallo
+4,16 giallo
+5,16 giallo
+6,16 giallo
+7,16 rosso
+8,16 giallo
+9,16 blue
+10,16 blue
+11,16 blue
+12,16 blue
+13,16 blue
+14,16 blue
+15,16 blue
+16,16 giallo
+17,16 rosso
+18,16
+19,16
+20,16
+21,16
+0,17 rosso
+1,17 rosso
+2,17 rosso
+3,17 rosso
+4,17 rosso
+5,17 rosso
+6,17 rosso
+7,17 rosso
+8,17 giallo
+9,17 giallo
+10,17 giallo
+11,17 giallo
+12,17 giallo
+13,17 giallo
+14,17 giallo
+15,17 giallo
+16,17 giallo
+17,17 rosso
+18,17
+19,17
+20,17
+21,17

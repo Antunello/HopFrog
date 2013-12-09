@@ -1,0 +1,396 @@
+0,0 door
+1,0 door
+2,0 door
+3,0 door
+4,0 door
+5,0 door
+6,0 door
+7,0 door
+8,0 door
+9,0 door
+10,0 door
+11,0 door
+12,0 door
+13,0 door
+14,0 door
+15,0 door
+16,0 door
+17,0 door
+18,0 door
+19,0 fukata
+20,0 giallo
+21,0 nero
+0,1 door
+1,1 door
+2,1 door
+3,1 door
+4,1 door
+5,1 door
+6,1 door
+7,1 door
+8,1 door
+9,1 door
+10,1 door
+11,1 door
+12,1 door
+13,1 door
+14,1 door
+15,1 door
+16,1 door
+17,1 door
+18,1 rosso
+19,1
+20,1
+21,1
+0,2 door
+1,2 door
+2,2 door
+3,2 door
+4,2 door
+5,2 door
+6,2 door
+7,2 door
+8,2 door
+9,2 door
+10,2 door
+11,2 door
+12,2 door
+13,2 door
+14,2 door
+15,2 door
+16,2 door
+17,2 door
+18,2
+19,2
+20,2
+21,2
+0,3 door
+1,3 door
+2,3 door
+3,3 door
+4,3 door
+5,3 door
+6,3 door
+7,3 door
+8,3 door
+9,3 door
+10,3 door
+11,3 door
+12,3 door
+13,3 door
+14,3 door
+15,3 door
+16,3 door
+17,3 door
+18,3
+19,3
+20,3
+21,3
+0,4 door
+1,4 door
+2,4 door
+3,4 door
+4,4 door
+5,4 door
+6,4 door
+7,4 door
+8,4 door
+9,4 door
+10,4 door
+11,4 door
+12,4 door
+13,4 door
+14,4 door
+15,4 door
+16,4 door
+17,4 door
+18,4
+19,4
+20,4
+21,4
+0,5 door
+1,5 door
+2,5 door
+3,5 door
+4,5 door
+5,5 door
+6,5 door
+7,5 door
+8,5 door
+9,5 door
+10,5 door
+11,5 door
+12,5 door
+13,5 door
+14,5 door
+15,5 door
+16,5 door
+17,5 door
+18,5
+19,5
+20,5
+21,5
+0,6 door
+1,6 door
+2,6 door
+3,6 door
+4,6 door
+5,6 door
+6,6 door
+7,6 door
+8,6 door
+9,6 door
+10,6 door
+11,6 door
+12,6 door
+13,6 door
+14,6 door
+15,6 door
+16,6 door
+17,6 door
+18,6
+19,6
+20,6
+21,6
+0,7 door
+1,7 door
+2,7 door
+3,7 door
+4,7 door
+5,7 door
+6,7 door
+7,7 door
+8,7 door
+9,7 door
+10,7 door
+11,7 door
+12,7 door
+13,7 door
+14,7 door
+15,7 door
+16,7 door
+17,7 door
+18,7
+19,7
+20,7
+21,7
+0,8 door
+1,8 door
+2,8 door
+3,8 door
+4,8 door
+5,8 door
+6,8 door
+7,8 door
+8,8 door
+9,8 door
+10,8 door
+11,8 door
+12,8 door
+13,8 door
+14,8 door
+15,8 door
+16,8 door
+17,8 door
+18,8
+19,8
+20,8
+21,8
+0,9 door
+1,9 door
+2,9 door
+3,9 door
+4,9 door
+5,9 door
+6,9 door
+7,9 door
+8,9 door
+9,9 door
+10,9 door
+11,9 door
+12,9 door
+13,9 door
+14,9 door
+15,9 door
+16,9 door
+17,9 door
+18,9
+19,9
+20,9
+21,9
+0,10 door
+1,10 door
+2,10 door
+3,10 door
+4,10 door
+5,10 door
+6,10 door
+7,10 door
+8,10 door
+9,10 door
+10,10 door
+11,10 door
+12,10 door
+13,10 door
+14,10 door
+15,10 door
+16,10 door
+17,10 door
+18,10
+19,10
+20,10
+21,10
+0,11 door
+1,11 door
+2,11 door
+3,11 door
+4,11 door
+5,11 door
+6,11 door
+7,11 door
+8,11 door
+9,11 door
+10,11 door
+11,11 door
+12,11 door
+13,11 door
+14,11 door
+15,11 door
+16,11 door
+17,11 door
+18,11
+19,11
+20,11
+21,11
+0,12 door
+1,12 door
+2,12 door
+3,12 door
+4,12 door
+5,12 door
+6,12 door
+7,12 door
+8,12 door
+9,12 door
+10,12 door
+11,12 door
+12,12 door
+13,12 door
+14,12 door
+15,12 door
+16,12 door
+17,12 door
+18,12
+19,12
+20,12
+21,12
+0,13 door
+1,13 door
+2,13 door
+3,13 door
+4,13 door
+5,13 door
+6,13 door
+7,13 door
+8,13 door
+9,13 door
+10,13 door
+11,13 door
+12,13 door
+13,13 door
+14,13 door
+15,13 door
+16,13 door
+17,13 door
+18,13
+19,13
+20,13
+21,13
+0,14 door
+1,14 door
+2,14 door
+3,14 door
+4,14 door
+5,14 door
+6,14 door
+7,14 door
+8,14 door
+9,14 door
+10,14 door
+11,14 door
+12,14 door
+13,14 door
+14,14 door
+15,14 door
+16,14 door
+17,14 door
+18,14
+19,14
+20,14
+21,14
+0,15 door
+1,15 door
+2,15 door
+3,15 door
+4,15 door
+5,15 door
+6,15 door
+7,15 door
+8,15 door
+9,15 door
+10,15 door
+11,15 door
+12,15 door
+13,15 door
+14,15 door
+15,15 door
+16,15 door
+17,15 door
+18,15
+19,15
+20,15
+21,15
+0,16 door
+1,16 door
+2,16 door
+3,16 door
+4,16 door
+5,16 door
+6,16 door
+7,16 door
+8,16 door
+9,16 door
+10,16 door
+11,16 door
+12,16 door
+13,16 door
+14,16 door
+15,16 door
+16,16 door
+17,16 door
+18,16
+19,16
+20,16
+21,16
+0,17 door
+1,17 door
+2,17 door
+3,17 door
+4,17 door
+5,17 door
+6,17 door
+7,17 door
+8,17 door
+9,17 door
+10,17 door
+11,17 door
+12,17 door
+13,17 door
+14,17 door
+15,17 door
+16,17 door
+17,17 door
+18,17
+19,17
+20,17
+21,17
