@@ -1,0 +1,25 @@
+.. HopFrog.py documentation master file, created by
+   sphinx-quickstart on Mon Dec  9 13:32:17 2013.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+Welcome to HopFrog.py's documentation!
+======================================
+
+Contents:
+
+.. toctree::
+   :maxdepth: 4
+
+   HopFrog
+   MapCreator
+   utilities
+
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
+

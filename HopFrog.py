@@ -9,21 +9,19 @@ from utilities import T
 from pygame.locals import *
 from pygame.transform import scale
 
+
 config =\
-{   'WindowSize': T((648, 648))
+{   'WindowSize': T((648, 648)),
+    'VELOCITY_BEET': 18,
+    'VELOCITY_PLAYER': 6
 }
 
 
-
-
-dim_1=22
-dim=18
 VELOCITY = 2
-VELOCITY_BEET=18
-VELOCITY_PLAYER=6
+
 FRAMES_PER_SEC = 60//VELOCITY
 
-WHITE = 255, 255, 255
+WHITE = 255,255,255
 RED = 255, 0, 0
 BLUE = 0, 0, 255
 BLACK = 0, 0, 0
@@ -49,19 +47,6 @@ ORIGIN = (0, 0)
 screen = pg.display.set_mode(DIMENSIONS)
 
 DIRECTIONS = [UP, DOWN, LEFT, RIGHT]
-
-def TimeIt(func):
-    def timing_func(*args):
-        t1 = time.time()
-        func(*args)
-        t2 = time.time()
-    return timing_func
-
-
-def getMovement(directionBits):
-    if directionBits in MOVEMENT:
-        return MOVEMENT[directionBits]
-    return None
 
 ####### List of tiles from metadata
 
@@ -110,6 +95,7 @@ def createRectangle(dimensions, colour = None):
     return rectangle
 
 class Entity(pg.sprite.Sprite):
+    """A class that manage the Graphical interface for Characters (Player or Beetles)"""
     
     def __init__(self, position, color, size=TILE_SIZE):
         
@@ -122,6 +108,7 @@ class Entity(pg.sprite.Sprite):
         # grid-position wrt. to the map that holds it
 
 class Character(Entity):
+    """A class for defining the main parameter for Player and Beetle Monster"""
     
     def __init__(self, world_position, position, color, size, name,life=3):
         
@@ -132,13 +119,128 @@ class Character(Entity):
     
 
 class Player(Character):
+    """A class for the Player: it's just a copy of Character Class plus a method to Control the Player Movement and the Attack"""
+    def HandleMovement(self,keyPresses,map_tiles):
+        """Method for control the movement of the Player through the keys -UP-DOWN-LEFT-RIGHT-"""
+        images = ["mouse_up.png","mouse_down.png","mouse_left.png","mouse_right.png"]
+        index_dir = [1,1,0,0]
+        tile_limit = [0,TILE_SIZE*17,0,TILE_SIZE*17]
+        prev_pos=self.world_position
+        presses=[keyPresses[K_UP],keyPresses[K_DOWN],keyPresses[K_LEFT],keyPresses[K_RIGHT]]
+        coor = [self.world_position[0]/TILE_SIZE,self.world_position[1]/TILE_SIZE]
+        res = [self.world_position[0]%TILE_SIZE,self.world_position[1]%TILE_SIZE]
+        map_mov_x = [0,0,-1,1]
+        map_mov_y = [-1,1,0,0]
+        poss_dir =[1,1,1,1]
+        porcata=[self.world_position[1] >=0, self.world_position[1] <17*TILE_SIZE, self.world_position[0] >=0, self.world_position[0] <17*TILE_SIZE]
+        player_step_full = [(0,-TILE_SIZE/config['VELOCITY_PLAYER']),(0,TILE_SIZE/config['VELOCITY_PLAYER']),(-config['VELOCITY_PLAYER'],0),(TILE_SIZE/config['VELOCITY_PLAYER'],0)]
+        player_step_x = [(0,0),(0,0),(-TILE_SIZE/config['VELOCITY_PLAYER'],0),(TILE_SIZE/config['VELOCITY_PLAYER'],0)]
+        player_step_y = [(0,-TILE_SIZE/config['VELOCITY_PLAYER']),(0,TILE_SIZE/config['VELOCITY_PLAYER']),(0,0),(0,0)]
+        
+        for i_index,i_el in enumerate(presses):
+            
+            if(i_el):
+                
+                for cn_in in range(len(mov)):
+                    if cn_in != i_index:
+                        mov[cn_in]=0
+                    else:
+                        mov[cn_in] = mov[cn_in]+1
+                
+                
+                self.position=self.world_position
+                self.color=images[i_index]
+                self.size=T((TILE_SIZE,TILE_SIZE))
+                next_x = coor[0]+map_mov_x[i_index]
+                next_y = coor[1]+map_mov_y[i_index]
+                
+                player_step = player_step_full
+                if(next_x>=0 and next_x<=17 and next_y >=0 and next_y <=17):
+                    intelligence = (map_tiles[next_x][next_y]).access
+                else:
+                    intelligence=0
+                if(res[0] != 0):
+                    y_control=0
+                    if(i_index==1 or res[1]==0 ):
+                        y_control=next_y
+                    else:
+                        y_control=coor[1]
+                    
+                    
+                    if((map_tiles[int(coor[0])][y_control]).access==0 or (map_tiles[int(coor[0])+1][y_control]).access==0):
+                        player_step = player_step_x
+                        if(next_x>=0 and next_x<=17 and y_control >=0 and y_control <=17):
+                            intelligence = 1
+                    else:
+                        player_step = player_step_full
+                        if(y_control >=0 and y_control <=17):
+                            intelligence = 1
+                
+                if(res[1] != 0):
+                    x_control=0
+                    if(i_index==3 or res[0]==0):
+                        x_control=next_x
+                    else:
+                        x_control=coor[0]
+                    if((map_tiles[x_control][int(coor[1])]).access==0 or (map_tiles[x_control][int(coor[1])+1]).access==0):
+                        player_step = player_step_y
+                        if(x_control>=0 and x_control<=17 and next_y >=0 and next_y <=17):
+                            intelligence = 1
+                    else:
+                        player_step = player_step_full
+                        if(x_control>=0 and next_x<=17):
+                            intelligence = 1
+                
+                if(mov[i_index]>1 and porcata[i_index]and intelligence>0):
+                    self.world_position=tuple(x+y for x, y in zip(self.world_position, player_step[i_index]))
+                    self.position=self.world_position
+        
+        
+        
+        return prev_pos
+
+    def Attack(self,keyPresses,beetle):
+        """Method to control the Attack action of the Player with the key -SPACE-"""
+        if keyPresses[K_SPACE]:
+            action = True
+            if(mov[3]>0):
+                self.color="mouse_right_sword.png"
+                self.size=T((2*TILE_SIZE,TILE_SIZE))
+                for i in range(number_beetles):
+                    if(beetle[i].position[1]==self.position[1] and (beetle[i].position[0] in range(self.position[0],self.position[0]+TILE_SIZE))):
+                        beetle[i].position=(-1000,-1000)
+            if(mov[2]>0):
+                self.color="mouse_left_sword.png"
+                self.size=T((2*TILE_SIZE,TILE_SIZE))
+                self.position =tuple(x+y for x, y in zip(self.world_position, (-TILE_SIZE,0)))
+                for i in range(number_beetles):
+                    if(beetle[i].position[1]==self.position[1] and (beetle[i].position[0] in range(self.position[0],self.position[0]+TILE_SIZE))):
+                        beetle[i].position=(-1000,-1000)
+                            
+            if(mov[0]>0):
+                self.color="mouse_up_sword.png"
+                self.size=T((TILE_SIZE,TILE_SIZE))
+                for i in range(number_beetles):
+                    if(beetle[i].position[0]==self.position[0] and (beetle[i].position[1] in range(self.position[1]-TILE_SIZE,self.position[1]))):
+                        beetle[i].position=(-1000,-1000)
+                            
+            if(mov[1]>0):
+                self.color="mouse_down_sword.png"
+                self.size=T((TILE_SIZE,TILE_SIZE))
+                for i in range(number_beetles):
+                    if(beetle[i].position[0]==self.position[0] and (beetle[i].position[1] in range(self.position[1]+TILE_SIZE,self.position[1]+2*TILE_SIZE))):
+                        beetle[i].position=(-1000,-1000)
+    
+
     pass
 
 class Beetle(Character):
+    """A class for the Beetle Monsters: it's a copy of the Class Character plus the function for the automatization of Beetle movements"""
     def MoveBeet(self,playstate):
+        """Method of Beetle class which define the intelligence of Beetles, remember they are Beetles not Einstein"""
         beetle_color_vect=["beetle_right.png","beetle_left.png","beetle_up.png","beetle_down.png"]
         beetle_color_logic=[0,1,2,3]
-        beetle_inc_pos=[(TILE_SIZE/VELOCITY_BEET,0),(-TILE_SIZE/VELOCITY_BEET,0),(0,-TILE_SIZE/VELOCITY_BEET),(0,TILE_SIZE/VELOCITY_BEET)]
+        beetle_inc_pos=[(TILE_SIZE/config['VELOCITY_BEET'],0),(-TILE_SIZE/config['VELOCITY_BEET'],0),(0,-TILE_SIZE/config['VELOCITY_BEET']),(0,TILE_SIZE/config['VELOCITY_BEET'])]
         next_tile_step=[(1,0),(-1,0),(0,-1),(0,1)]
         limits=[17,0,0,17]
         suppress=[1,0,3,2]
@@ -148,7 +250,7 @@ class Beetle(Character):
 
         if((self.position[0]%TILE_SIZE)==0 and (self.position[1]%TILE_SIZE)==0):
             
-            availabledir = CheckAvailability(self.position, playstate.mp.mapTiles, next_tile_step)
+            availabledir = self.CheckAvailability(playstate.mp.mapTiles, next_tile_step)
             
 
             numdir = np.sum(availabledir)
@@ -191,11 +293,23 @@ class Beetle(Character):
             self.position=tuple(x+y for x, y in zip(self.position, beetle_inc_pos[index]))
             self.color=beetle_color_logic[index]
 
+    def CheckAvailability(self, map,nextstep):
+        """Check the availability of the tiles around the beetle"""
+        availabledirection=[1,1,1,1]
+        for i in range(len(availabledirection)):
+            if(self.position[0]/TILE_SIZE+nextstep[i][0]>17 or self.position[0]/TILE_SIZE+nextstep[i][0]<0 or self.position[1]/TILE_SIZE+nextstep[i][1]>17 or self.position[1]/TILE_SIZE+nextstep[i][1]<0):
+                availabledirection[i]=0
+        for i in range(len(availabledirection)):
+            if(availabledirection[i]!=0):
+                if(map[self.position[0]/TILE_SIZE+nextstep[i][0]][self.position[1]/TILE_SIZE+nextstep[i][1]].access!=1):
+                    availabledirection[i]=0
+        return availabledirection
+
     pass
 
 
 class MapTile:
-    
+    """A Class that define the Tile of the map"""
     def __init__(self, x, y):
         self.x, self.y = x, y
         self.levels = []
@@ -227,6 +341,7 @@ class MapTile:
 
 
 def loadRpgMap(name):
+    """A method that load the RpgMap from a .map file stored into the same directory"""
     # check cache first
     # tileData is keyed on an x,y tuple
     tileData = {}
@@ -259,6 +374,7 @@ def loadRpgMap(name):
     return myMap
 
 def createMapTiles(cols, rows, tileData):
+    """Method """
     # create the map tiles
     mapTiles = [[MapTile(x, y) for y in range(rows)] for x in range(cols)]
     # iterate through the tile data and set the map tiles
@@ -321,7 +437,7 @@ def loadTileSet(name):
 
 
 class RpgMap:
-    
+    """A Class to handle the map of the game"""
     def __init__(self, name, mapTiles):
         self.name = name
         self.mapTiles = mapTiles
@@ -342,18 +458,6 @@ class RpgMap:
     def getMapView(self, viewRect):
         return self.mapImage.subsurface(viewRect)
 
-    def getBaseRectTiles(self, rect):
-        rectTiles = []
-        x1, y1 = self.convertTopLeft(rect.left, rect.top)
-        x2, y2 = self.convertBottomRight(rect.right - 1, rect.bottom - 1)
-        self.verticals = {}
-        for x in range(x1, x2 + 1):
-            self.verticals[x] = self.mapTiles[x][y1:y2 + 1]
-            rectTiles += self.verticals[x]
-        self.horizontals = {}
-        for y in range(y1, y2 + 1):
-            self.horizontals[y] = [self.mapTiles[x][y] for x in range(x1, x2 + 1)]
-        return rectTiles
 
 
 def startGame(cont = False):
@@ -404,7 +508,7 @@ class PlayState():
     
     
     def __init__(self):
-        self.mp =loadRpgMap('east')
+        self.mp =loadRpgMap('east_piace')
         # must set the player map + position before we create this state
     
         self.viewRect = Rect((0, 0), pg.display.get_surface().get_size())
@@ -433,119 +537,13 @@ class PlayState():
         else:
             return None
 
-    def HandleMovement(self,keyPresses,map_tiles):
-        images = ["mouse_up.png","mouse_down.png","mouse_left.png","mouse_right.png"]
-        index_dir = [1,1,0,0]
-        tile_limit = [0,TILE_SIZE*17,0,TILE_SIZE*17]
-        prev_pos=player.world_position
-        presses=[keyPresses[K_UP],keyPresses[K_DOWN],keyPresses[K_LEFT],keyPresses[K_RIGHT]]
-        coor = [player.world_position[0]/TILE_SIZE,player.world_position[1]/TILE_SIZE]
-        res = [player.world_position[0]%TILE_SIZE,player.world_position[1]%TILE_SIZE]
-        map_mov_x = [0,0,-1,1]
-        map_mov_y = [-1,1,0,0]
-        poss_dir =[1,1,1,1]
-        porcata=[player.world_position[1] >=0, player.world_position[1] <17*TILE_SIZE, player.world_position[0] >=0, player.world_position[0] <17*TILE_SIZE]
-        player_step_full = [(0,-TILE_SIZE/VELOCITY_PLAYER),(0,TILE_SIZE/VELOCITY_PLAYER),(-TILE_SIZE/VELOCITY_PLAYER,0),(TILE_SIZE/VELOCITY_PLAYER,0)]
-        player_step_x = [(0,0),(0,0),(-TILE_SIZE/VELOCITY_PLAYER,0),(TILE_SIZE/VELOCITY_PLAYER,0)]
-        player_step_y = [(0,-TILE_SIZE/VELOCITY_PLAYER),(0,TILE_SIZE/VELOCITY_PLAYER),(0,0),(0,0)]
-        
-        for i_index,i_el in enumerate(presses):
-            
-            if(i_el):
-
-                for cn_in in range(len(mov)):
-                    if cn_in != i_index:
-                        mov[cn_in]=0
-                    else:
-                        mov[cn_in] = mov[cn_in]+1
-                        
-            
-                player.position=player.world_position
-                player.color=images[i_index]
-                player.size=T((TILE_SIZE,TILE_SIZE))
-                next_x = coor[0]+map_mov_x[i_index]
-                next_y = coor[1]+map_mov_y[i_index]
-            
-                player_step = player_step_full
-                if(next_x>=0 and next_x<=17 and next_y >=0 and next_y <=17):
-                    intelligence = (map_tiles[next_x][next_y]).access
-                else:
-                    intelligence=0
-                if(res[0] != 0):
-                    y_control=0
-                    if(i_index==1 or res[1]==0 ):
-                        y_control=next_y
-                    else:
-                        y_control=coor[1]
-                            
-
-                    if((map_tiles[int(coor[0])][y_control]).access==0 or (map_tiles[int(coor[0])+1][y_control]).access==0):
-                        player_step = player_step_x
-                        if(next_x>=0 and next_x<=17 and y_control >=0 and y_control <=17):
-                            intelligence = 1
-                    else:
-                        player_step = player_step_full
-                        if(y_control >=0 and y_control <=17):
-                            intelligence = 1
-
-                if(res[1] != 0):
-                    x_control=0
-                    if(i_index==3 or res[0]==0):
-                        x_control=next_x
-                    else:
-                        x_control=coor[0]
-                    if((map_tiles[x_control][int(coor[1])]).access==0 or (map_tiles[x_control][int(coor[1])+1]).access==0):
-                        player_step = player_step_y
-                        if(x_control>=0 and x_control<=17 and next_y >=0 and next_y <=17):
-                            intelligence = 1
-                    else:
-                        player_step = player_step_full
-                        if(x_control>=0 and next_x<=17):
-                            intelligence = 1
-                            
-                if(mov[i_index]>1 and porcata[i_index]and intelligence>0):
-                    player.world_position=tuple(x+y for x, y in zip(player.world_position, player_step[i_index]))
-                    player.position=player.world_position
-                    
-                    
-
-        return prev_pos
-
-
 
     def processKeyPresses(self, keyPresses):
         action = False
         map_tiles = self.mp.mapTiles
-        previous_position= self.HandleMovement(keyPresses,map_tiles)
-        if keyPresses[K_SPACE]:
-            action = True
-            if(mov[3]>0):
-                player.color="mouse_right_sword.png"
-                player.size=T((2*TILE_SIZE,TILE_SIZE))
-                for i in range(number_beetles):
-                    if(beetle[i].position[1]==player.position[1] and (beetle[i].position[0] in range(player.position[0],player.position[0]+TILE_SIZE))):
-                        beetle[i].position=(-1000,-1000)
-            if(mov[2]>0):
-                player.color="mouse_left_sword.png"
-                player.size=T((2*TILE_SIZE,TILE_SIZE))
-                player.position =tuple(x+y for x, y in zip(player.world_position, (-TILE_SIZE,0)))
-                for i in range(number_beetles):
-                    if(beetle[i].position[1]==player.position[1] and (beetle[i].position[0] in range(player.position[0],player.position[0]+TILE_SIZE))):
-                        beetle[i].position=(-1000,-1000)
+        previous_position= player.HandleMovement(keyPresses,map_tiles)
+        player.Attack(keyPresses,beetle)
         
-            if(mov[0]>0):
-                player.color="mouse_up_sword.png"
-                player.size=T((TILE_SIZE,TILE_SIZE))
-                for i in range(number_beetles):
-                    if(beetle[i].position[0]==player.position[0] and (beetle[i].position[1] in range(player.position[1]-TILE_SIZE,player.position[1]))):
-                        beetle[i].position=(-1000,-1000)
-
-            if(mov[1]>0):
-                player.color="mouse_down_sword.png"
-                player.size=T((TILE_SIZE,TILE_SIZE))
-                for i in range(number_beetles):
-                    if(beetle[i].position[0]==player.position[0] and (beetle[i].position[1] in range(player.position[1]+TILE_SIZE,player.position[1]+2*TILE_SIZE))):
-                        beetle[i].position=(-1000,-1000)
 
         for i in range(97,122):
             if keyPresses[i]:
@@ -686,23 +684,9 @@ class Mapcreation(object):
             event = pg.event.wait()
             if event.type == QUIT or (event.type == KEYDOWN and event.key == K_ESCAPE):
                 return
-            
-def InBorder(a):
-    if(a[0]<=17 and a[0]>=0 and a[1]<=17 and a[1]>=0):
-        return True
-    else:
-        return False
 
-def CheckAvailability(beetleposition, map,nextstep):
-    availabledirection=[1,1,1,1]
-    for i in range(len(availabledirection)):
-        if(beetleposition[0]/TILE_SIZE+nextstep[i][0]>17 or beetleposition[0]/TILE_SIZE+nextstep[i][0]<0 or beetleposition[1]/TILE_SIZE+nextstep[i][1]>17 or beetleposition[1]/TILE_SIZE+nextstep[i][1]<0):
-            availabledirection[i]=0
-    for i in range(len(availabledirection)):
-        if(availabledirection[i]!=0):
-            if(map[beetleposition[0]/TILE_SIZE+nextstep[i][0]][beetleposition[1]/TILE_SIZE+nextstep[i][1]].access!=1):
-                availabledirection[i]=0
-    return availabledirection
+
+
 
 if __name__ == '__main__':
     map=Map(config)
