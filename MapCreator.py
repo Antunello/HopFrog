@@ -8,7 +8,7 @@ import random as rd
 from utilities import T
 from pygame.locals import *
 from pygame.transform import scale
- 
+
 config =\
 {   'WindowSize': T((792, 648))
 }
