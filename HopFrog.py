@@ -1,4 +1,5 @@
 import sys
+import re
 import os
 import numpy as np
 import math
@@ -231,6 +232,32 @@ class Player(Character):
                     if(beetle[i].position[0]==self.position[0] and (beetle[i].position[1] in range(self.position[1]+TILE_SIZE,self.position[1]+2*TILE_SIZE))):
                         beetle[i].position=(-1000,-1000)
     
+    def LifeManager(self,beetle,playstate):
+        images_star = ["mouse_up_star.png","mouse_down_star.png","mouse_left_star.png","mouse_right_star.png"]
+    
+        life_index = 1
+        for i in range(number_beetles):
+            p_x = player.world_position[0]
+            p_y = player.world_position[1]
+            b_x = beetle[i].position[0]
+            b_y = beetle[i].position[1]
+            if(np.sqrt(np.power(p_x-b_x,2)+np.power(p_y-b_y,2))<TILE_SIZE):
+                elapsed_time = time.time()-playstate.start_time
+                playstate.start_time = time.time()
+                if(elapsed_time>0.5):
+                    player.life = player.life-1
+                    life_index = 0
+                    for i_color,index_color in enumerate(images_star):
+                        print self.color[:8]
+                        m = re.search(self.color[:8], images_star[i_color])
+                        #print self.color
+                        if m:
+                            self.color = images_star[i_color]
+                            print self.color
+                            
+        if(life_index==0):
+            print life_index
+        return life_index
 
     pass
 
@@ -509,10 +536,11 @@ class PlayState():
     
     
     def __init__(self):
-        self.mp =loadRpgMap('east_antu')
+        self.mp =loadRpgMap('east_piace')
         # must set the player map + position before we create this state
         self.start_time = time.time()
         self.viewRect = Rect((0, 0), pg.display.get_surface().get_size())
+        self.index_life = 1
     
     def execute(self, keyPresses):
         transition = self.getNextTransition(keyPresses)
@@ -567,20 +595,7 @@ class PlayState():
             max_y=player.world_position[1]
             min_y=previous_position[1]
         
-        for i in range(number_beetles):
-            p_x = player.world_position[0]
-            p_y = player.world_position[1]
-            b_x = beetle[i].position[0]
-            b_y = beetle[i].position[1]
-            if(np.sqrt(np.power(p_x-b_x,2)+np.power(p_y-b_y,2))<TILE_SIZE):
-                elapsed_time = time.time()-self.start_time
-                print elapsed_time
-                if(elapsed_time>1):
-                    player.life = player.life-1
-                self.start_time = time.time()
-                print player.life
-            #if(player.world_position==beetle[i].position or (beetle[i].position[0]==player.world_position[0] and beetle[i].position[1] in range(min_y,max_y)) or (beetle[i].position[1]==player.world_position[1] and beetle[i].position[0] in range(min_x,max_x))):
-                #player.life=player.life-1
+        self.index_life = player.LifeManager(beetle,self)
         return action
 
     def drawMapView(self, surface, increment = 1):
@@ -599,8 +614,12 @@ class PlayState():
         img = pg.image.load(imagePath)
         image=scale(img, player.size)
         image.convert()
+                #surface.blit(image,player.position)
+            #if(self.index_life>0):
         surface.blit(image,player.position)
-
+            #else:
+                #print 'todo: add image of damage'
+            
         image_life = pg.image.load(life_imm[player.life])
         image_life.convert()
         surface.blit(image_life, ORIGIN)
