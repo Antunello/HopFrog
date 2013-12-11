@@ -249,7 +249,7 @@ class Player(Character):
                     player.life = player.life-1
                     life_index = 0
                     for i_color,index_color in enumerate(images_star):
-                        print self.color[:8]
+                        #print self.color[:8]
                         m = re.search(self.color[:8], images_star[i_color])
                         if(re.search(self.color[:8],images_star[2])):
                             self.position=self.world_position
@@ -690,7 +690,7 @@ class Mapcreation(object):
             event = pg.event.wait()
             if event.type == QUIT or (event.type == KEYDOWN and event.key == K_ESCAPE):
                 return
-            if event.key == K_RETURN:
+            if (event.type == KEYDOWN and event.key == K_RETURN):
                 break
     
         while True:
