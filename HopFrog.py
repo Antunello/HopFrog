@@ -233,6 +233,7 @@ class Player(Character):
                         beetle[i].position=(-1000,-1000)
     
     def LifeManager(self,beetle,playstate):
+        """Method that handles the Life of the Player and the animation when he get dangered by the Beetles"""
         images_star = ["mouse_up_star.png","mouse_down_star.png","mouse_left_star.png","mouse_right_star.png"]
     
         life_index = 1
@@ -250,11 +251,13 @@ class Player(Character):
                     for i_color,index_color in enumerate(images_star):
                         print self.color[:8]
                         m = re.search(self.color[:8], images_star[i_color])
-                        #print self.color
+                        if(re.search(self.color[:8],images_star[2])):
+                            self.position=self.world_position
                         if m:
+                            self.size = T((TILE_SIZE,TILE_SIZE))
                             self.color = images_star[i_color]
-                            print self.color
-                            
+        #print self.color
+    
         if(life_index==0):
             print life_index
         return life_index
@@ -338,6 +341,7 @@ class Beetle(Character):
 class MapTile:
     """A Class that define the Tile of the map"""
     def __init__(self, x, y):
+        """Inizialization of a single Tile"""
         self.x, self.y = x, y
         self.levels = []
         self.tiles = []
@@ -350,9 +354,11 @@ class MapTile:
         
     
     def addTile(self, tile):
+        """superimpose the tile"""
         self.tiles.append(tile)
         
     def createTileImage(self):
+        """Method for creation of the image of the Tile"""
         if len(self.tiles) == 0:
             return None
         elif len(self.tiles) > 1:
@@ -401,7 +407,7 @@ def loadRpgMap(name):
     return myMap
 
 def createMapTiles(cols, rows, tileData):
-    """Method """
+    """Method a matrix of MapTile related to the map"""
     # create the map tiles
     mapTiles = [[MapTile(x, y) for y in range(rows)] for x in range(cols)]
     # iterate through the tile data and set the map tiles
@@ -532,7 +538,7 @@ def startGame(cont = False):
     return playstate
 
 class PlayState():
-    
+    """A class that manage the key presses and related them to action of the Player and Beetles"""
     
     
     def __init__(self):
@@ -568,6 +574,7 @@ class PlayState():
 
 
     def processKeyPresses(self, keyPresses):
+        """This method reacts to the key that you press and takes action based on this key event"""
         action = False
         map_tiles = self.mp.mapTiles
         previous_position= player.HandleMovement(keyPresses,map_tiles)
@@ -650,7 +657,7 @@ class Map(object):
         print 'Done!'
 
 class Mapcreation(object):
-    
+    """A Class that take care of creating the map display and of printing it onto the screen"""
     def __init__(self, screen, config, status):
         
         self.screen = screen
