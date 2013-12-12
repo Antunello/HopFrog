@@ -299,7 +299,12 @@ class Beetle(Character):
             dir = -1
 
             if(numdir==1):
-                dir = incoming_position
+                if(availabledir[self.color]==1):
+                    dir = self.color
+                else:
+                    for e,i in enumerate(availabledir):
+                        if(i==1):
+                            dir=e
 
             elif(numdir==2):
                 for e,i in enumerate(availabledir):
@@ -317,12 +322,13 @@ class Beetle(Character):
                             L.append(e)
                         f=f+1
                 dir = L[rd.randint(0,numdir-2)]
-
+            
             ics_new=(self.position[0]/TILE_SIZE)+next_tile_step[dir][0]
             ipsilon_new=self.position[1]/TILE_SIZE+next_tile_step[dir][1]
-
-            self.position=tuple(x+y for x, y in zip(self.position, beetle_inc_pos[dir]))
-            self.color=beetle_color_logic[dir]
+            
+            if(numdir!=0):
+                self.position=tuple(x+y for x, y in zip(self.position, beetle_inc_pos[dir]))
+                self.color=beetle_color_logic[dir]
     
         else:
             self.position=tuple(x+y for x, y in zip(self.position, beetle_inc_pos[index]))
@@ -336,8 +342,10 @@ class Beetle(Character):
                 availabledirection[i]=0
         for i in range(len(availabledirection)):
             if(availabledirection[i]!=0):
+                #print "access: ", map[self.position[0]/TILE_SIZE+nextstep[i][0]][self.position[1]/TILE_SIZE+nextstep[i][1]].access
                 if(map[self.position[0]/TILE_SIZE+nextstep[i][0]][self.position[1]/TILE_SIZE+nextstep[i][1]].access!=1):
                     availabledirection[i]=0
+                    #print "check map_x: ",self.position[0]/TILE_SIZE+nextstep[i][0]," | check map_y: ",self.position[1]/TILE_SIZE+nextstep[i][1], " | access: ",map[self.position[0]/TILE_SIZE+nextstep[i][0]][self.position[1]/TILE_SIZE+nextstep[i][1]].access
         return availabledirection
 
     pass
@@ -551,7 +559,7 @@ class PlayState():
     
     
     def __init__(self):
-        self.mp =loadRpgMap('east_piace')
+        self.mp =loadRpgMap('east')
         # must set the player map + position before we create this state
         self.start_time = time.time()
         self.viewRect = Rect((0, 0), pg.display.get_surface().get_size())
