@@ -291,7 +291,7 @@ def startGame(cont = False):
     os.chdir(os.getcwd()+"/..")
     global liststring
     liststring=['' for x in range(len(listfile)-1)]
-    for co in range(1,len(listfile)):
+    for co in range(0,len(listfile)):
         leng=len(listfile[co])
         string=listfile[co]
         string_1=' '+string[0:leng-4]
