@@ -1,0 +1,9 @@
+('/Users/macbookpro/Desktop/Python_course/HopFrog/build/HopFrog/HopFrog',
+ True,
+ False,
+ None,
+ None,
+ [],
+ None,
+ False,
+ 1386839894)

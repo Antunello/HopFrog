@@ -1,395 +1,395 @@
-0,0 rosso
-1,0 rosso
-2,0 rosso
-3,0 rosso
-4,0 rosso
-5,0 rosso
-6,0 rosso
-7,0 rosso
-8,0 rosso
-9,0 rosso
-10,0 rosso
-11,0 rosso
-12,0 rosso
-13,0 rosso
-14,0 rosso
-15,0 rosso
-16,0 rosso
-17,0 rosso
+0,0 blue
+1,0 blue
+2,0 blue
+3,0 blue
+4,0 blue
+5,0 blue
+6,0 blue
+7,0 blue
+8,0 blue
+9,0 blue
+10,0 blue
+11,0 blue
+12,0 blue
+13,0 blue
+14,0 blue
+15,0 blue
+16,0 blue
+17,0 blue
 18,0 blue
 19,0 door
 20,0 fukata
 21,0 giallo
-0,1 rosso
-1,1 giallo
-2,1 giallo
-3,1 giallo
-4,1 giallo
-5,1 giallo
-6,1 giallo
-7,1 giallo
-8,1 giallo
-9,1 giallo
-10,1 giallo
-11,1 giallo
-12,1 giallo
-13,1 giallo
-14,1 giallo
-15,1 giallo
-16,1 giallo
-17,1 giallo
+0,1 blue
+1,1 blue
+2,1 blue
+3,1 blue
+4,1 blue
+5,1 blue
+6,1 blue
+7,1 blue
+8,1 blue
+9,1 blue
+10,1 blue
+11,1 blue
+12,1 blue
+13,1 blue
+14,1 blue
+15,1 blue
+16,1 blue
+17,1 blue
 18,1 nero
 19,1 rosso
 20,1
 21,1
-0,2 rosso
-1,2 giallo
-2,2 giallo
-3,2 giallo
-4,2 giallo
-5,2 giallo
-6,2 giallo
-7,2 giallo
-8,2 giallo
-9,2 giallo
-10,2 giallo
-11,2 giallo
-12,2 giallo
-13,2 giallo
-14,2 giallo
-15,2 giallo
-16,2 giallo
-17,2 giallo
+0,2 blue
+1,2 blue
+2,2 blue
+3,2 blue
+4,2 blue
+5,2 blue
+6,2 blue
+7,2 blue
+8,2 blue
+9,2 blue
+10,2 blue
+11,2 blue
+12,2 blue
+13,2 blue
+14,2 blue
+15,2 blue
+16,2 blue
+17,2 blue
 18,2
 19,2
 20,2
 21,2
-0,3 rosso
-1,3 giallo
-2,3 rosso
-3,3 rosso
-4,3 rosso
-5,3 rosso
-6,3 rosso
-7,3 rosso
-8,3 giallo
-9,3 giallo
-10,3 giallo
-11,3 giallo
-12,3 giallo
-13,3 giallo
-14,3 giallo
-15,3 giallo
-16,3 giallo
-17,3 giallo
+0,3 blue
+1,3 blue
+2,3 blue
+3,3 blue
+4,3 blue
+5,3 blue
+6,3 blue
+7,3 blue
+8,3 blue
+9,3 blue
+10,3 blue
+11,3 blue
+12,3 blue
+13,3 blue
+14,3 blue
+15,3 blue
+16,3 blue
+17,3 blue
 18,3
 19,3
 20,3
 21,3
-0,4 rosso
-1,4 giallo
-2,4 rosso
+0,4 blue
+1,4 blue
+2,4 blue
 3,4 blue
 4,4 blue
 5,4 blue
 6,4 blue
-7,4 rosso
-8,4 nero
-9,4 giallo
-10,4 giallo
-11,4 giallo
-12,4 giallo
-13,4 giallo
-14,4 giallo
-15,4 rosso
-16,4 rosso
-17,4 rosso
+7,4 blue
+8,4 blue
+9,4 blue
+10,4 blue
+11,4 blue
+12,4 blue
+13,4 blue
+14,4 blue
+15,4 blue
+16,4 blue
+17,4 blue
 18,4
 19,4
 20,4
 21,4
-0,5 rosso
-1,5 giallo
-2,5 rosso
+0,5 blue
+1,5 blue
+2,5 blue
 3,5 blue
 4,5 blue
 5,5 blue
-6,5 rosso
-7,5 rosso
-8,5 nero
-9,5 giallo
-10,5 rosso
-11,5 rosso
-12,5 rosso
-13,5 rosso
-14,5 giallo
-15,5 rosso
+6,5 blue
+7,5 blue
+8,5 blue
+9,5 blue
+10,5 blue
+11,5 blue
+12,5 blue
+13,5 blue
+14,5 blue
+15,5 blue
 16,5 blue
-17,5 rosso
+17,5 blue
 18,5
 19,5
 20,5
 21,5
-0,6 rosso
-1,6 giallo
-2,6 rosso
+0,6 blue
+1,6 blue
+2,6 blue
 3,6 blue
 4,6 blue
 5,6 blue
-6,6 rosso
-7,6 giallo
-8,6 fukata
-9,6 giallo
-10,6 rosso
+6,6 blue
+7,6 blue
+8,6 blue
+9,6 blue
+10,6 blue
 11,6 blue
 12,6 blue
-13,6 rosso
-14,6 giallo
-15,6 rosso
+13,6 blue
+14,6 blue
+15,6 blue
 16,6 blue
-17,6 rosso
+17,6 blue
 18,6
 19,6
 20,6
 21,6
-0,7 rosso
-1,7 giallo
-2,7 rosso
+0,7 blue
+1,7 blue
+2,7 blue
 3,7 blue
 4,7 blue
 5,7 blue
-6,7 rosso
-7,7 giallo
-8,7 giallo
-9,7 giallo
-10,7 rosso
+6,7 blue
+7,7 blue
+8,7 blue
+9,7 blue
+10,7 blue
 11,7 blue
 12,7 blue
-13,7 rosso
-14,7 giallo
-15,7 rosso
+13,7 blue
+14,7 blue
+15,7 blue
 16,7 blue
-17,7 rosso
+17,7 blue
 18,7
 19,7
 20,7
 21,7
-0,8 rosso
-1,8 giallo
-2,8 rosso
+0,8 blue
+1,8 blue
+2,8 blue
 3,8 blue
 4,8 blue
 5,8 blue
-6,8 rosso
-7,8 giallo
-8,8 nero
-9,8 giallo
-10,8 rosso
+6,8 blue
+7,8 blue
+8,8 blue
+9,8 blue
+10,8 blue
 11,8 blue
 12,8 blue
-13,8 rosso
-14,8 giallo
-15,8 rosso
+13,8 blue
+14,8 blue
+15,8 blue
 16,8 blue
-17,8 rosso
+17,8 blue
 18,8
 19,8
 20,8
 21,8
-0,9 rosso
-1,9 giallo
-2,9 rosso
+0,9 blue
+1,9 blue
+2,9 blue
 3,9 blue
 4,9 blue
 5,9 blue
-6,9 rosso
-7,9 giallo
-8,9 nero
-9,9 giallo
-10,9 rosso
+6,9 blue
+7,9 blue
+8,9 blue
+9,9 blue
+10,9 blue
 11,9 blue
 12,9 blue
-13,9 rosso
-14,9 giallo
-15,9 rosso
+13,9 blue
+14,9 blue
+15,9 blue
 16,9 blue
-17,9 rosso
+17,9 blue
 18,9
 19,9
 20,9
 21,9
-0,10 rosso
-1,10 giallo
-2,10 rosso
+0,10 blue
+1,10 blue
+2,10 blue
 3,10 blue
 4,10 blue
 5,10 blue
-6,10 rosso
-7,10 giallo
-8,10 fukata
-9,10 giallo
-10,10 rosso
+6,10 blue
+7,10 blue
+8,10 blue
+9,10 blue
+10,10 blue
 11,10 blue
 12,10 blue
-13,10 rosso
-14,10 giallo
-15,10 rosso
+13,10 blue
+14,10 blue
+15,10 blue
 16,10 blue
-17,10 rosso
+17,10 blue
 18,10
 19,10
 20,10
 21,10
-0,11 rosso
-1,11 giallo
-2,11 rosso
+0,11 blue
+1,11 blue
+2,11 blue
 3,11 blue
 4,11 blue
 5,11 blue
-6,11 rosso
-7,11 giallo
-8,11 nero
-9,11 giallo
-10,11 rosso
+6,11 blue
+7,11 blue
+8,11 blue
+9,11 blue
+10,11 blue
 11,11 blue
 12,11 blue
-13,11 rosso
-14,11 giallo
-15,11 rosso
+13,11 blue
+14,11 blue
+15,11 blue
 16,11 blue
-17,11 rosso
+17,11 blue
 18,11
 19,11
 20,11
 21,11
-0,12 rosso
-1,12 giallo
-2,12 rosso
-3,12 rosso
-4,12 rosso
-5,12 rosso
-6,12 rosso
-7,12 giallo
-8,12 nero
-9,12 giallo
-10,12 rosso
+0,12 blue
+1,12 blue
+2,12 blue
+3,12 blue
+4,12 blue
+5,12 blue
+6,12 blue
+7,12 blue
+8,12 blue
+9,12 blue
+10,12 blue
 11,12 blue
 12,12 blue
-13,12 rosso
-14,12 giallo
-15,12 rosso
+13,12 blue
+14,12 blue
+15,12 blue
 16,12 blue
-17,12 rosso
+17,12 blue
 18,12
 19,12
 20,12
 21,12
-0,13 giallo
-1,13 giallo
-2,13 giallo
-3,13 giallo
-4,13 giallo
-5,13 giallo
-6,13 giallo
-7,13 giallo
-8,13 nero
-9,13 giallo
-10,13 rosso
+0,13 blue
+1,13 blue
+2,13 blue
+3,13 blue
+4,13 blue
+5,13 blue
+6,13 blue
+7,13 blue
+8,13 blue
+9,13 blue
+10,13 blue
 11,13 blue
 12,13 blue
-13,13 rosso
-14,13 giallo
-15,13 rosso
+13,13 blue
+14,13 blue
+15,13 blue
 16,13 blue
-17,13 rosso
+17,13 blue
 18,13
 19,13
 20,13
 21,13
-0,14 giallo
-1,14 fukata
-2,14 fukata
-3,14 fukata
-4,14 fukata
-5,14 fukata
-6,14 nero
-7,14 nero
-8,14 fukata
-9,14 giallo
-10,14 rosso
+0,14 blue
+1,14 blue
+2,14 blue
+3,14 blue
+4,14 blue
+5,14 blue
+6,14 blue
+7,14 blue
+8,14 blue
+9,14 blue
+10,14 blue
 11,14 blue
 12,14 blue
-13,14 rosso
-14,14 giallo
-15,14 rosso
+13,14 blue
+14,14 blue
+15,14 blue
 16,14 blue
-17,14 rosso
+17,14 blue
 18,14
 19,14
 20,14
 21,14
-0,15 giallo
-1,15 fukata
-2,15 giallo
-3,15 giallo
-4,15 giallo
-5,15 giallo
-6,15 giallo
-7,15 giallo
-8,15 giallo
-9,15 giallo
-10,15 rosso
-11,15 rosso
-12,15 rosso
-13,15 rosso
-14,15 giallo
-15,15 rosso
-16,15 rosso
-17,15 rosso
+0,15 blue
+1,15 blue
+2,15 blue
+3,15 blue
+4,15 blue
+5,15 blue
+6,15 blue
+7,15 blue
+8,15 blue
+9,15 blue
+10,15 blue
+11,15 blue
+12,15 blue
+13,15 blue
+14,15 blue
+15,15 blue
+16,15 blue
+17,15 blue
 18,15
 19,15
 20,15
 21,15
-0,16 giallo
-1,16 giallo
-2,16 giallo
-3,16 rosso
-4,16 rosso
-5,16 rosso
-6,16 rosso
-7,16 rosso
-8,16 rosso
-9,16 giallo
-10,16 giallo
-11,16 giallo
-12,16 giallo
-13,16 giallo
-14,16 giallo
-15,16 giallo
-16,16 giallo
-17,16 giallo
+0,16 blue
+1,16 blue
+2,16 blue
+3,16 blue
+4,16 blue
+5,16 blue
+6,16 blue
+7,16 blue
+8,16 blue
+9,16 blue
+10,16 blue
+11,16 blue
+12,16 blue
+13,16 blue
+14,16 blue
+15,16 blue
+16,16 blue
+17,16 blue
 18,16
 19,16
 20,16
 21,16
-0,17 rosso
-1,17 rosso
-2,17 rosso
-3,17 rosso
-4,17 rosso
-5,17 rosso
-6,17 rosso
-7,17 rosso
-8,17 rosso
-9,17 rosso
-10,17 rosso
-11,17 rosso
-12,17 rosso
-13,17 rosso
-14,17 rosso
-15,17 rosso
-16,17 rosso
-17,17 rosso
+0,17 blue
+1,17 blue
+2,17 blue
+3,17 blue
+4,17 blue
+5,17 blue
+6,17 blue
+7,17 blue
+8,17 blue
+9,17 blue
+10,17 blue
+11,17 blue
+12,17 blue
+13,17 blue
+14,17 blue
+15,17 blue
+16,17 blue
+17,17 blue
 18,17
 19,17
 20,17
