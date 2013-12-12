@@ -52,24 +52,27 @@ DIRECTIONS = [UP, DOWN, LEFT, RIGHT]
 ####### List of tiles from metadata
 
 class TileSet:
-    
+    """Store the tiles properties, in particular the accessability"""
     def __init__(self, tiles,access_set):
         self.tiles = tiles
         self.access_set = access_set
     
     
     def getTile(self, name):
+        """Return the chosen Tile from the TileSet"""
         if name in self.tiles:
             return self.tiles[name]
         return None
 
     def getTileAccess(self, name):
+        """Check the accessability of the Tile"""
         if name in self.tiles:
             return self.access_set[name]
         return None
 
 
 def loadImage(imagePath, colourKey = None):
+    """Method for loading the images"""
     # fullName = os.path.join(folder, name)
     try:
         image = pg.image.load(imagePath)
@@ -83,6 +86,7 @@ def loadImage(imagePath, colourKey = None):
 
 
 def loadScaledImage(imagePath, colourKey = None, scalar = SCALAR):
+    """Method to scale the image to the TILE_SIZE"""
     img = loadImage(imagePath, colourKey)
     return scale(img, (TILE_SIZE*scalar, TILE_SIZE*scalar))
 
@@ -90,6 +94,7 @@ def getXY(xyStr, delimiter = COMMA):
     return [int(n) for n in xyStr.split(delimiter)]
 
 def createRectangle(dimensions, colour = None):
+    """Method to create python Rectangle based on the pictures"""
     rectangle = pg.Surface(dimensions).convert()
     if colour is not None:
         rectangle.fill(colour)
@@ -439,6 +444,7 @@ def createMapTiles(cols, rows, tileData):
 ######### loadTileSet: it surfs through the metadata and provide the TileSet (all the tiles images related to a key name)
 
 def loadTileSet(name):
+    """A method that surfs through the metadata and provide the TileSet (all the tiles images related to a key name)"""
     # print "load tileset: %s" % (name)
     # tileSet = map.TileSet()
     tiles = {}
@@ -478,6 +484,7 @@ class RpgMap:
         self.toRestore = None
     
     def initialiseMapImage(self):
+        """A method for initialiazing the map"""
         self.mapImage = createRectangle((22 * TILE_SIZE, 22 * TILE_SIZE),
                                         BLACK)
         for tiles in self.mapTiles:
@@ -489,11 +496,13 @@ class RpgMap:
 
     
     def getMapView(self, viewRect):
+        """Return the Map surface"""
         return self.mapImage.subsurface(viewRect)
 
 
 
 def startGame(cont = False):
+    """A method to start the game"""
     global mov
     mov=[0,0,0,0]
     global world_pos
@@ -549,6 +558,7 @@ class PlayState():
         self.index_life = 1
     
     def execute(self, keyPresses):
+        """A method that update the screen each key press"""
         transition = self.getNextTransition(keyPresses)
         self.drawMapView(screen)
         pg.display.flip()
@@ -558,6 +568,7 @@ class PlayState():
             return None
     
     def getNextTransition(self, keyPresses):
+        """A Method that checks if we triggered any events by key press"""
         # have we triggered any events?
         transition = self.handleInput(keyPresses)
         if transition:
@@ -566,6 +577,7 @@ class PlayState():
             return None
 
     def handleInput(self, keyPresses):
+        """A Method that process the key press"""
         action = self.processKeyPresses(keyPresses)
         if action:
             return 1
@@ -606,6 +618,7 @@ class PlayState():
         return action
 
     def drawMapView(self, surface, increment = 1):
+        """Drawing the Map with Player and Beetles"""
         beetle_color_vect=["beetle_right.png","beetle_left.png","beetle_up.png","beetle_down.png"]
         life_imm=["./start_end/life_empty.png","./start_end/life_last.png","./start_end/life_mid.png","./start_end/life_full.png"]
         surface.blit(self.mp.getMapView(self.viewRect), ORIGIN)
@@ -634,9 +647,9 @@ class PlayState():
 
 
 class Map(object):
-    
+    """Inizialization of the game"""
     def __init__(self, config):
-        
+        """"Setting the initial conditions and initialization of pygame"""
         self.config = config
         pg.init()
         
@@ -651,6 +664,7 @@ class Map(object):
         self.paint = Mapcreation(self.screen, self.config, self.status)
     
     def launch(self):
+        """Launching the game"""
         self.paint.run()
         print 'Finishing, drawn map'
         pg.quit()
@@ -667,7 +681,7 @@ class Mapcreation(object):
         self.state = 'LocaLmap'
  
     def run(self):
-        
+        """Engine of the game, it manages the windows and the actions of the Player"""
         # This does not register mouse movement - greatly reduces ressource
         # consumption
         pg.event.set_blocked(pg.MOUSEMOTION)

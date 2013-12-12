@@ -93,10 +93,12 @@
 <dt id="HopFrog.Map">
 <em class="property">class </em><tt class="descclassname">HopFrog.</tt><tt class="descname">Map</tt><big>(</big><em>config</em><big>)</big><a class="reference internal" href="_modules/HopFrog.html#Map"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#HopFrog.Map" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+<p>Inizialization of the game</p>
 <dl class="method">
 <dt id="HopFrog.Map.launch">
 <tt class="descname">launch</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/HopFrog.html#Map.launch"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#HopFrog.Map.launch" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Launching the game</p>
+</dd></dl>
 
 </dd></dl>
 
@@ -107,12 +109,14 @@
 <dl class="method">
 <dt id="HopFrog.MapTile.addTile">
 <tt class="descname">addTile</tt><big>(</big><em>tile</em><big>)</big><a class="reference internal" href="_modules/HopFrog.html#MapTile.addTile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#HopFrog.MapTile.addTile" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>superimpose the tile</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="HopFrog.MapTile.createTileImage">
 <tt class="descname">createTileImage</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/HopFrog.html#MapTile.createTileImage"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#HopFrog.MapTile.createTileImage" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Method for creation of the image of the Tile</p>
+</dd></dl>
 
 </dd></dl>
 
@@ -120,40 +124,48 @@
 <dt id="HopFrog.Mapcreation">
 <em class="property">class </em><tt class="descclassname">HopFrog.</tt><tt class="descname">Mapcreation</tt><big>(</big><em>screen</em>, <em>config</em>, <em>status</em><big>)</big><a class="reference internal" href="_modules/HopFrog.html#Mapcreation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#HopFrog.Mapcreation" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+<p>A Class that take care of creating the map display and of printing it onto the screen</p>
 <dl class="method">
 <dt id="HopFrog.Mapcreation.run">
 <tt class="descname">run</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/HopFrog.html#Mapcreation.run"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#HopFrog.Mapcreation.run" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Engine of the game, it manages the windows and the actions of the Player</p>
+</dd></dl>
 
 </dd></dl>
 
 <dl class="class">
 <dt id="HopFrog.PlayState">
 <em class="property">class </em><tt class="descclassname">HopFrog.</tt><tt class="descname">PlayState</tt><a class="reference internal" href="_modules/HopFrog.html#PlayState"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#HopFrog.PlayState" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="method">
+<dd><p>A class that manage the key presses and related them to action of the Player and Beetles</p>
+<dl class="method">
 <dt id="HopFrog.PlayState.drawMapView">
 <tt class="descname">drawMapView</tt><big>(</big><em>surface</em>, <em>increment=1</em><big>)</big><a class="reference internal" href="_modules/HopFrog.html#PlayState.drawMapView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#HopFrog.PlayState.drawMapView" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Drawing the Map with Player and Beetles</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="HopFrog.PlayState.execute">
 <tt class="descname">execute</tt><big>(</big><em>keyPresses</em><big>)</big><a class="reference internal" href="_modules/HopFrog.html#PlayState.execute"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#HopFrog.PlayState.execute" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>A method that update the screen each key press</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="HopFrog.PlayState.getNextTransition">
 <tt class="descname">getNextTransition</tt><big>(</big><em>keyPresses</em><big>)</big><a class="reference internal" href="_modules/HopFrog.html#PlayState.getNextTransition"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#HopFrog.PlayState.getNextTransition" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>A Method that checks if we triggered any events by key press</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="HopFrog.PlayState.handleInput">
 <tt class="descname">handleInput</tt><big>(</big><em>keyPresses</em><big>)</big><a class="reference internal" href="_modules/HopFrog.html#PlayState.handleInput"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#HopFrog.PlayState.handleInput" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>A Method that process the key press</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="HopFrog.PlayState.processKeyPresses">
 <tt class="descname">processKeyPresses</tt><big>(</big><em>keyPresses</em><big>)</big><a class="reference internal" href="_modules/HopFrog.html#PlayState.processKeyPresses"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#HopFrog.PlayState.processKeyPresses" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>This method reacts to the key that you press and takes action based on this key event</p>
+</dd></dl>
 
 </dd></dl>
 
@@ -174,6 +186,12 @@
 <dd><p>Method for control the movement of the Player through the keys -UP-DOWN-LEFT-RIGHT-</p>
 </dd></dl>
 
+<dl class="method">
+<dt id="HopFrog.Player.LifeManager">
+<tt class="descname">LifeManager</tt><big>(</big><em>beetle</em>, <em>playstate</em><big>)</big><a class="headerlink" href="#HopFrog.Player.LifeManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>Method that handles the Life of the Player and the animation when he get dangered by the Beetles</p>
+</dd></dl>
+
 </dd></dl>
 
 <dl class="class">
@@ -183,40 +201,46 @@
 <dl class="method">
 <dt id="HopFrog.RpgMap.getMapView">
 <tt class="descname">getMapView</tt><big>(</big><em>viewRect</em><big>)</big><a class="reference internal" href="_modules/HopFrog.html#RpgMap.getMapView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#HopFrog.RpgMap.getMapView" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Return the Map surface</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="HopFrog.RpgMap.initialiseMapImage">
 <tt class="descname">initialiseMapImage</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/HopFrog.html#RpgMap.initialiseMapImage"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#HopFrog.RpgMap.initialiseMapImage" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>A method for initialiazing the map</p>
+</dd></dl>
 
 </dd></dl>
 
 <dl class="class">
 <dt id="HopFrog.TileSet">
 <em class="property">class </em><tt class="descclassname">HopFrog.</tt><tt class="descname">TileSet</tt><big>(</big><em>tiles</em>, <em>access_set</em><big>)</big><a class="reference internal" href="_modules/HopFrog.html#TileSet"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#HopFrog.TileSet" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="method">
+<dd><p>Store the tiles properties, in particular the accessability</p>
+<dl class="method">
 <dt id="HopFrog.TileSet.getTile">
 <tt class="descname">getTile</tt><big>(</big><em>name</em><big>)</big><a class="reference internal" href="_modules/HopFrog.html#TileSet.getTile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#HopFrog.TileSet.getTile" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Return the chosen Tile from the TileSet</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="HopFrog.TileSet.getTileAccess">
 <tt class="descname">getTileAccess</tt><big>(</big><em>name</em><big>)</big><a class="reference internal" href="_modules/HopFrog.html#TileSet.getTileAccess"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#HopFrog.TileSet.getTileAccess" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Check the accessability of the Tile</p>
+</dd></dl>
 
 </dd></dl>
 
 <dl class="function">
 <dt id="HopFrog.createMapTiles">
 <tt class="descclassname">HopFrog.</tt><tt class="descname">createMapTiles</tt><big>(</big><em>cols</em>, <em>rows</em>, <em>tileData</em><big>)</big><a class="reference internal" href="_modules/HopFrog.html#createMapTiles"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#HopFrog.createMapTiles" title="Permalink to this definition">¶</a></dt>
-<dd><p>Method</p>
+<dd><p>Method a matrix of MapTile related to the map</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="HopFrog.createRectangle">
 <tt class="descclassname">HopFrog.</tt><tt class="descname">createRectangle</tt><big>(</big><em>dimensions</em>, <em>colour=None</em><big>)</big><a class="reference internal" href="_modules/HopFrog.html#createRectangle"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#HopFrog.createRectangle" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Method to create python Rectangle based on the pictures</p>
+</dd></dl>
 
 <dl class="function">
 <dt id="HopFrog.getXY">
@@ -226,7 +250,8 @@
 <dl class="function">
 <dt id="HopFrog.loadImage">
 <tt class="descclassname">HopFrog.</tt><tt class="descname">loadImage</tt><big>(</big><em>imagePath</em>, <em>colourKey=None</em><big>)</big><a class="reference internal" href="_modules/HopFrog.html#loadImage"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#HopFrog.loadImage" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Method for loading the images</p>
+</dd></dl>
 
 <dl class="function">
 <dt id="HopFrog.loadRpgMap">
@@ -237,17 +262,20 @@
 <dl class="function">
 <dt id="HopFrog.loadScaledImage">
 <tt class="descclassname">HopFrog.</tt><tt class="descname">loadScaledImage</tt><big>(</big><em>imagePath</em>, <em>colourKey=None</em>, <em>scalar=1</em><big>)</big><a class="reference internal" href="_modules/HopFrog.html#loadScaledImage"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#HopFrog.loadScaledImage" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Method to scale the image to the TILE_SIZE</p>
+</dd></dl>
 
 <dl class="function">
 <dt id="HopFrog.loadTileSet">
 <tt class="descclassname">HopFrog.</tt><tt class="descname">loadTileSet</tt><big>(</big><em>name</em><big>)</big><a class="reference internal" href="_modules/HopFrog.html#loadTileSet"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#HopFrog.loadTileSet" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>A method that surfs through the metadata and provide the TileSet (all the tiles images related to a key name)</p>
+</dd></dl>
 
 <dl class="function">
 <dt id="HopFrog.startGame">
 <tt class="descclassname">HopFrog.</tt><tt class="descname">startGame</tt><big>(</big><em>cont=False</em><big>)</big><a class="reference internal" href="_modules/HopFrog.html#startGame"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#HopFrog.startGame" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>A method to start the game</p>
+</dd></dl>
 
 </div>
 
